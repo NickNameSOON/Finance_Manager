@@ -1,0 +1,22 @@
+ul.navbar-nav.ml-auto
+  li.nav-item
+    = link_to categories_path, class: "#{current_link_class(categories_path)} nav-link" do
+      i.fa-solid.fa-clipboard-list
+      | Категорії
+
+  li.nav-item
+    = link_to operations_path, class: "#{current_link_class(operations_path)} nav-link" do
+      i.fa-regular.fa-credit-card
+      | Операції
+
+  li.nav-item
+    = link_to reports_path, class: "#{current_link_class(reports_path)} nav-link" do
+      i.fa-solid.fa-chart-pie
+      | Звіти
+  li.nav-item.dropdown
+    a.nav-link.dropdown-toggle href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+      i.fa-solid.fa-user-tie
+      = current_user.email
+    ul.dropdown-menu
+      li
+        = button_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item"

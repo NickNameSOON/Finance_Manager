@@ -1,0 +1,14 @@
+= render "banner"
+= render "features"
+= render "carousel"
+
+section.container.cards
+  .row.py-4.d-flex
+    - dump_data.each do |f|
+      .col.card.border-0.p-4.mx-4
+        = image_tag "#{f[:img]}", style: "width: 56px; height: auto; margin: 0 auto;"
+        .card-body
+          h5.card-title.text-center.fw-bold
+            = f[:title]
+
+= render "shared/modal"

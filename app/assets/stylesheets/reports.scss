@@ -1,0 +1,23 @@
+@import "./variables.scss";
+
+.reports {
+  padding: 20px 20px 20px 50px;
+  margin-top: 5%;
+  margin-bottom: 30px;
+  background: #102128;
+  border-radius: 18px;
+  box-shadow: #00ffcb 0px 0px 14px;;
+  color: $main-text-color;
+}
+.main_report-form {
+  display: flex;
+}
+.report_form {
+  flex: 2;
+}
+.today_rates {
+  flex: 1;
+}
+h1 {
+  text-align: center;
+}

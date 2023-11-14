@@ -1,0 +1,18 @@
+.container.mt-2.pt-4
+  h2.text-center style="color: #00ffcb;"
+    | Розподіл витрат за період по датам в
+    | &nbsp;
+    = params[:currency]
+    | &nbsp;
+    = image_tag(exchange_rates(params[:currency]), class: 'currency-flag', size: '40x30')
+    | &nbsp;
+    = @report_options[:start_date]
+    | &nbsp;-&nbsp;
+    = @report_options[:last_date]
+
+  .col style="margin-top: 100px;"
+    = line_chart @date_reports, label: "Сума",
+                                xtitle: "Finance Manager",
+                                ytitle: "Values", curve: false,
+                                empty: "Заповніть будь ласка форму"
+
